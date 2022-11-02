@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Thom187/myFlix-client#readme",
   "devDependencies": {
+    "buffer": "^6.0.3",
     "parcel": "^2.7.0",
     "process": "^0.11.10"
   },

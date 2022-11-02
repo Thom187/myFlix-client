@@ -1,21 +1,29 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
+import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
 
 export class MainView extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      movies: [
-        { _id: 1, title: 'The Shawshank Redemption', description: 'desc1...', imagePath: 'https://www.themoviedb.org/t/p/w220_and_h330_face/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg' },
-        { _id: 2, title: 'The Green Mile', description: 'desc2...', imagePath: 'https://www.themoviedb.org/t/p/w220_and_h330_face/velWPhVMQeQKcxggNEU8YmIo52R.jpg' },
-        { _id: 3, title: 'Pulp Fiction', description: 'desc3...', imagePath: 'https://www.themoviedb.org/t/p/w220_and_h330_face/fIE3lAGcZDV1G6XM5KmuWnNsPp1.jpg' }
-      ],
+      movies: [],
       selectedMovie: null
     };
+  }
+
+  componentDidMount() {
+    axios.get('https://my-flix1987.herokuapp.com/movies')
+      .then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -27,19 +35,20 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie } = this.state;
 
-    if (movies.length === 0) return <div className="main-view">The List is empty!</div>;
+    if (movies.length === 0) return <div className="main-view" />;
 
     return (
-      <div className="main-view">
+      <div className='main-view'>
         {selectedMovie
           ? <MovieView movie={selectedMovie}
             onBackClick={newSelectedMovie => {
               this.setSelectedMovie(newSelectedMovie);
             }} />
           : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => {
-              this.setSelectedMovie(movie)
-            }} />))
+            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => {
+              this.setSelectedMovie(newSelectedMovie)
+            }} />
+          ))
         }
       </div>
     );
