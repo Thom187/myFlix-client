@@ -23,6 +23,7 @@ export function LoginView(props) {
           onChange={e => setPassword(e.target.value)} />
       </label>
       <button type="submit" onClick={handleSubmit}>Submit</button>
+      <button>Sign In</button>
     </form>
   );
 }
