@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
