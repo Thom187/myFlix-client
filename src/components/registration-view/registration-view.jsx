@@ -72,8 +72,6 @@ export function RegistrationView(props) {
               </Card.Body>
             </Card>
           </CardGroup>
-
-
         </Col>
       </Row>
     </Container>
