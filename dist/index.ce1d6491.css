@@ -2,4 +2,24 @@
   color: #4682b4;
 }
 
+.card-body, .Card, .app-container {
+  color: #ecdbba;
+  background-color: #2d2463;
+  padding: 40px;
+}
+
+.btn {
+  horizontal-align: center;
+  margin-top: 10px;
+}
+
+.movie-poster {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.movie-view {
+  line-height: 1.5;
+}
+
 /*# sourceMappingURL=index.ce1d6491.css.map */

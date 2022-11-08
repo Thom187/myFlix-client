@@ -1,0 +1,24 @@
+$color-bg: #2D2463;
+$color-font: #ECDBBA;
+
+.card-body,
+.Card,
+.app-container {
+  background-color: $color-bg;
+  color: $color-font;
+  padding: 40px;
+}
+
+.btn {
+  margin-top: 10px;
+  horizontal-align: center
+}
+
+.movie-poster {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.movie-view {
+  line-height: 1.5;
+}
