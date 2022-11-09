@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Row, Col } from 'react-bootstrap/';
+import { Row, Col, Button } from 'react-bootstrap/';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -56,6 +56,14 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
   getMovies(token) {
     axios.get('https://my-flix1987.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}` }
@@ -109,6 +117,9 @@ export class MainView extends React.Component {
             </Col>
           ))
         }
+        <Button onClick={() => {
+          this.onLoggedOut()
+        }}>Logout</Button>
       </Row>
     );
   }
