@@ -5847,8 +5847,8 @@ class MainView extends (0, _reactDefault.default).Component {
         this.setState({
             user: authData.user.username
         });
-        localStorage.setItem("token, authData.token");
-        localStorage.setItem("user, authData.user.username");
+        localStorage.setItem("token", authData.token);
+        localStorage.setItem("user", authData.user.username);
         this.getMovies(authData.token);
     }
     getMovies(token) {
