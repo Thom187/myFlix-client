@@ -5822,13 +5822,13 @@ class MainView extends (0, _reactDefault.default).Component {
         };
     }
     componentDidMount() {
-        (0, _axiosDefault.default).get("https://my-flix1987.herokuapp.com/movies").then((response)=>{
+        let accessToken = localStorage.getItem("token");
+        if (accessToken !== null) {
             this.setState({
-                movies: response.data
+                user: localStorage.getItem("user")
             });
-        }).catch((error)=>{
-            console.log(error);
-        });
+            this.getMovies(accessToken);
+        }
     }
     /*When a movie is clicked,this function is invoked
   and updates the state of the `selectedMovie` *property to that movie*/ setSelectedMovie(newSelectedMovie) {
@@ -5871,7 +5871,7 @@ class MainView extends (0, _reactDefault.default).Component {
             onRegistration: (register)=>this.onRegistration(register)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 79,
+            lineNumber: 77,
             columnNumber: 28
         }, this);
         /* If there is no user, the LoginView is rendered. 
@@ -5880,7 +5880,7 @@ class MainView extends (0, _reactDefault.default).Component {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 85,
+            lineNumber: 83,
             columnNumber: 23
         }, this);
         // Before the movies have been loaded
@@ -5888,7 +5888,7 @@ class MainView extends (0, _reactDefault.default).Component {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 89,
+            lineNumber: 87,
             columnNumber: 37
         }, this);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Row), {
@@ -5902,12 +5902,12 @@ class MainView extends (0, _reactDefault.default).Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 99,
+                    lineNumber: 97,
                     columnNumber: 15
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 98,
+                lineNumber: 96,
                 columnNumber: 13
             }, this) : movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
                     sm: 6,
@@ -5920,17 +5920,17 @@ class MainView extends (0, _reactDefault.default).Component {
                         }
                     }, movie._id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 108,
+                        lineNumber: 106,
                         columnNumber: 15
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 107,
+                    lineNumber: 105,
                     columnNumber: 13
                 }, this))
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 92,
+            lineNumber: 90,
             columnNumber: 7
         }, this);
     }
