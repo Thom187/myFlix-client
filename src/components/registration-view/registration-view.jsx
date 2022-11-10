@@ -1,17 +1,71 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Container, Row, Col, CardGroup, Card } from 'react-bootstrap/';
+import axios from 'axios';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
+  // Declare hook for each Input
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+  const [emailErr, setEmailErr] = useState('');
+
+  // Validate user's input
+  const validate = () => {
+    let isReq = true;
+
+    if (!username) {
+      setUsernameErr('Username is required.');
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr('Username must be at least 5 characters long.');
+      isReq = false;
+    }
+
+    if (!password) {
+      setPasswordErr('Password is required');
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr('Password must be at least 6 characters long.');
+      isReq = false;
+    }
+
+    if (!email) {
+      setEmailErr('Email is required.');
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setEmailErr('Invalid email address');
+      isReq = false;
+    }
+
+    return isReq;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    props.onRegistration(username)
+    const isReq = validate();
+    if (isReq) {
+      /* Send a request to the server for authentication */
+      axios.post('https://my-flix1987.herokuapp.com/users', {
+        username: username,
+        password: password,
+        email: email,
+        birthday: birthday
+      })
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+          alert('Your registration was successful, please login!');
+          window.open('/', '_self'); // _self let the page open in current tab
+        })
+        .catch(response => {
+          console.error(response);
+          alert('Registration failed.');
+        });
+    }
   };
 
   return (
@@ -32,6 +86,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter a username"
                     />
+                    {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
@@ -41,9 +96,10 @@ export function RegistrationView(props) {
                       value={password}
                       onChange={e => setPassword(e.target.value)}
                       required
-                      minLength="8"
-                      placeholder="Your password must be at least 8 characters"
+                      minLength="6"
+                      placeholder="Your password must be at least 6 characters"
                     />
+                    {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
@@ -55,6 +111,7 @@ export function RegistrationView(props) {
                       required
                       placeholder="Enter your email address "
                     />
+                    {emailErr && <p>{emailErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
