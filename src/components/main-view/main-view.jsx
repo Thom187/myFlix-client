@@ -100,15 +100,18 @@ export class MainView extends React.Component {
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
+            if (!user) return
             return movies.map(m => (
-              <Col md={3} key={m._id}>
+              <Col lg={3} md={4} sm={6} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }} />
-          <Route path="/movies/:movieId" render={({ match }) => {
+          <Route path="/movies/:movieId" render={({ match, history }) => {
             return <Col md={8}>
-              <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+              <MovieView movie={movies.find(m => m._id === match.params.movieId)}
+                onBackClick={() =>
+                  history.goBack()} />
             </Col>
           }} />
 

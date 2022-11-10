@@ -5902,8 +5902,11 @@ class MainView extends (0, _reactDefault.default).Component {
                         exact: true,
                         path: "/",
                         render: ()=>{
+                            if (!user) return;
                             return movies.map((m)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
-                                    md: 3,
+                                    lg: 3,
+                                    md: 4,
+                                    sm: 6,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                         movie: m
                                     }, void 0, false, void 0, void 0)
@@ -5916,17 +5919,18 @@ class MainView extends (0, _reactDefault.default).Component {
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                         path: "/movies/:movieId",
-                        render: ({ match  })=>{
+                        render: ({ match , history  })=>{
                             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
                                 md: 8,
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-                                    movie: movies.find((m)=>m._id === match.params.movieId)
+                                    movie: movies.find((m)=>m._id === match.params.movieId),
+                                    onBackClick: ()=>history.goBack()
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false, void 0, void 0);
                         }
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 109,
+                        lineNumber: 110,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Button), {
@@ -5936,7 +5940,7 @@ class MainView extends (0, _reactDefault.default).Component {
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 115,
+                        lineNumber: 118,
                         columnNumber: 11
                     }, this)
                 ]
