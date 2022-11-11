@@ -55,11 +55,11 @@ export class MainView extends React.Component {
   //   });
   // }
 
-  // onRegistration(register) {
-  //   this.setState({
-  //     register
-  //   });
-  // }
+  onRegistration(register) {
+    this.setState({
+      register
+    });
+  }
 
   /* When a user successfully logs in, this function updates
   the `user` property in state to that particular user*/
@@ -91,24 +91,40 @@ export class MainView extends React.Component {
     /* If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are
     *passed as a prop to the LoginView*/
-    if (!user) return (
-      <LoginView onLoggedIn={user =>
-        this.onLoggedIn(user)} />)
+    // if (!user) return (
+    //   <LoginView onLoggedIn={user =>
+    //     this.onLoggedIn(user)} />)
 
     // Before the movies have been loaded
-    if (movies.length === 0) return <div className="main-view" />;
+    // if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <Router>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
-            if (!user) return
+            if (!user)
+              return (
+                <LoginView onLoggedIn={user =>
+                  this.onLoggedIn(user)}
+                />);
+            if (movies.length === 0) return <div className="main-view" />;
             return movies.map(m => (
               <Col lg={3} md={4} sm={6} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
           }} />
+          <Route
+            path="/register"
+            render={() => {
+              if (user) return <Redirect to="/" />;
+              return (
+                <Col>
+                  <RegistrationView />
+                </Col>
+              );
+            }}
+          />
           <Route path="/movies/:movieId" render={({ match, history }) => {
             return <Col md={8}>
               <MovieView movie={movies.find(m => m._id === match.params.movieId)}
