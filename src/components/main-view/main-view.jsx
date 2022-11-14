@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Row, Col, Button } from 'react-bootstrap/';
 
+import { Menubar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -87,6 +88,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
+        <Menubar user={user} />
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
             /* If there is no user, the LoginView is rendered. 
