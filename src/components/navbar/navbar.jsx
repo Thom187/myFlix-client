@@ -36,7 +36,7 @@ export function Menubar({ user }) {
             )}
             {isAuth() && (
               <Button variant='link' onClick={() => {
-                this.onLoggedOut()
+                onLoggedOut()
               }}>
                 Logout
               </Button>
