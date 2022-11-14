@@ -10,6 +10,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 import './main-view.scss';
 
@@ -160,6 +161,13 @@ export class MainView extends React.Component {
             </Col>
           }
           } />
+
+          <Route path={`/users/${user}`} render={({ match, history }) => {
+            if (!user) return <Redirect to="/" />
+            return <Col>
+              <ProfileView movies={movies} user={user} onBackClick={() => history.goBack()} />
+            </Col>
+          }} />
         </Row>
       </Router>
     );
