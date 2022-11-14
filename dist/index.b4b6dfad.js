@@ -5855,11 +5855,11 @@ class MainView extends (0, _reactDefault.default).Component {
     //     selectedMovie: newSelectedMovie
     //   });
     // }
-    onRegistration(register) {
-        this.setState({
-            register
-        });
-    }
+    // onRegistration(register) {
+    //   this.setState({
+    //     register
+    //   });
+    // }
     /* When a user successfully logs in, this function updates
   the `user` property in state to that particular user*/ onLoggedIn(authData) {
         console.log(authData);
@@ -5870,13 +5870,13 @@ class MainView extends (0, _reactDefault.default).Component {
         localStorage.setItem("user", authData.user.username);
         this.getMovies(authData.token);
     }
-    onLoggedOut() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        this.setState({
-            user: null
-        });
-    }
+    // onLoggedOut() {
+    //   localStorage.removeItem('token');
+    //   localStorage.removeItem('user');
+    //   this.setState({
+    //     user: null
+    //   });
+    // }
     render() {
         const { movies , user  } = this.state;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
@@ -5896,9 +5896,12 @@ class MainView extends (0, _reactDefault.default).Component {
                             path: "/",
                             render: ()=>{
                                 /* If there is no user, the LoginView is rendered. 
-If there is a user logged in, the user details are
-*passed as a prop to the LoginView*/ if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
-                                    onLoggedIn: (user)=>this.onLoggedIn(user)
+              If there is a user logged in, the user details are
+              *passed as a prop to the LoginView*/ if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
+                                    md: 8,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
                                 // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -5921,21 +5924,29 @@ If there is a user logged in, the user details are
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/register",
                             render: ()=>{
-                                if (user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Redirect, {
-                                    to: "/"
-                                }, void 0, false, void 0, void 0);
                                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
+                                    md: 8,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registrationView.RegistrationView), {}, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 110,
+                            lineNumber: 114,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/movies/:movieId",
                             render: ({ match , history  })=>{
+                                if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
+                                    md: 8,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0);
+                                // Before the movies have been loaded
+                                if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "main-view"
+                                }, void 0, false, void 0, void 0);
                                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
                                     md: 8,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -5952,6 +5963,13 @@ If there is a user logged in, the user details are
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/directors/:name",
                             render: ({ match , history  })=>{
+                                if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
+                                    md: 8,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0);
+                                // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
@@ -5965,12 +5983,19 @@ If there is a user logged in, the user details are
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 129,
+                            lineNumber: 137,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/genres/:name",
                             render: ({ match , history  })=>{
+                                if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Col), {
+                                    md: 8,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, void 0, void 0);
+                                // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
@@ -5984,7 +6009,7 @@ If there is a user logged in, the user details are
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 137,
+                            lineNumber: 151,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Button), {
@@ -5994,7 +6019,7 @@ If there is a user logged in, the user details are
                             children: "Logout"
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 146,
+                            lineNumber: 164,
                             columnNumber: 11
                         }, this)
                     ]
