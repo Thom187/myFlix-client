@@ -5946,7 +5946,6 @@ class MainView extends (0, _reactDefault.default).Component {
                                         onLoggedIn: (user)=>this.onLoggedIn(user)
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
-                                // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
@@ -5960,7 +5959,7 @@ class MainView extends (0, _reactDefault.default).Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 122,
+                            lineNumber: 123,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -5972,7 +5971,6 @@ class MainView extends (0, _reactDefault.default).Component {
                                         onLoggedIn: (user)=>this.onLoggedIn(user)
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
-                                // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
@@ -5998,7 +5996,6 @@ class MainView extends (0, _reactDefault.default).Component {
                                         onLoggedIn: (user)=>this.onLoggedIn(user)
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0);
-                                // Before the movies have been loaded
                                 if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
@@ -6012,17 +6009,7 @@ class MainView extends (0, _reactDefault.default).Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 152,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Button), {
-                            onClick: ()=>{
-                                this.onLoggedOut();
-                            },
-                            children: "Logout"
-                        }, void 0, false, {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 165,
+                            lineNumber: 151,
                             columnNumber: 11
                         }, this)
                     ]
