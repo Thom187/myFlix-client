@@ -82,6 +82,24 @@ export function ProfileView(props) {
     }
   };
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('token');
+    if (confirm('Do you really want to delete your account?')) {
+      axios.delete(`https://my-flix1987.herokuapp.com/users/${user}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      })
+        .then((response) => {
+          alert('Your account has been deleted.');
+          localStorage.clear();
+          window.open('/', '_self');
+        })
+        .catch((e) => console.log(e));
+    }
+  };
+
 
   return (
     <Container>
@@ -143,6 +161,8 @@ export function ProfileView(props) {
                   <Button className="ml-2" onClick={() => {
                     onBackClick(null);
                   }}>Back</Button>
+                  <br />
+                  <Button className="" variant="danger" type="submit" onClick={handleDelete} >Delete account</Button>
                 </Form>
               </Card.Body>
             </Card>
