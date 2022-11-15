@@ -40750,7 +40750,7 @@ function LoginView(props) {
             const data = response.data;
             props.onLoggedIn(data);
         }).catch((e)=>{
-            console.log("no such user");
+            alert("no such user");
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Container), {
