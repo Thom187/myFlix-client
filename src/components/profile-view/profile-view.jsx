@@ -50,9 +50,6 @@ export function ProfileView(props) {
     e.preventDefault();
     const isReq = validate();
     const token = localStorage.getItem('token');
-    console.log(isReq);
-    console.log(token);
-    console.log(user);
     if (isReq && token !== null && user !== null) {
       /* Send a request to the server for authentication */
       axios.put(`https://my-flix1987.herokuapp.com/users/${user}`,
