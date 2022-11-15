@@ -73,6 +73,7 @@ export function ProfileView(props) {
           console.log(data);
           alert('Profile update was successful! Please Login again.');
           localStorage.clear();
+          window.open('/', '_self');
         })
         .catch(response => {
           console.error(response);
