@@ -167,6 +167,5 @@ export function ProfileView(props) {
         </Col>
       </Row>
     </Container>
-
   );
 }
