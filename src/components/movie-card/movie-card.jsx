@@ -39,5 +39,4 @@ MovieCard.propTypes = {
       birthday: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
 };
