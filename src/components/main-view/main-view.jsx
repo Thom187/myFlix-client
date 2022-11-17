@@ -73,8 +73,33 @@ export class MainView extends React.Component {
 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.username);
+    localStorage.setItem('birthday', authData.user.birthday);
+    localStorage.setItem('password', authData.user.password);
+    localStorage.setItem('email', authData.user.email);
+    localStorage.setItem('favoriteMovies', authData.user.favoriteMovies);
     this.getMovies(authData.token);
   }
+
+  addToFavoriteMovies(e) {
+    const { movie } = this.props;
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    e.preventDefault();
+    axios.
+      post(`https://my-flix1987.herokuapp.com/users/${user}/favoriteMovies/${movie._id}`,
+        { user: localStorage.getItem('user') },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        alert('Added to your Favorites.');
+      })
+      .catch((error) => console.error(error));
+  }
+
 
   // onLoggedOut() {
   //   localStorage.removeItem('token');
