@@ -125,6 +125,13 @@ export function RegistrationView(props) {
                   </Form.Group>
 
                   <Button variant="primary" type="submit" onClick={handleSubmit}>Sign In</Button>
+                  <Button
+                    className='ml-2'
+                    variant='primary'
+                    href={"/"}
+                  >
+                    Login
+                  </Button>
                 </Form>
               </Card.Body>
             </Card>
