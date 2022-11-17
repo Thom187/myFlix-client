@@ -17,16 +17,10 @@ export function LoginView(props) {
     if (!username) {
       setUsernameErr('Username is required.');
       isReq = false;
-    } else if (username.length < 5) {
-      setUsernameErr('Username must be at least 5 characters long.');
-      isReq = false;
     }
 
     if (!password) {
       setPasswordErr('Password is required');
-      isReq = false;
-    } else if (password.length < 6) {
-      setPasswordErr('Password must be at least 6 characters long.');
       isReq = false;
     }
     return isReq;
@@ -46,7 +40,7 @@ export function LoginView(props) {
           props.onLoggedIn(data);
         })
         .catch(e => {
-          alert('no such user')
+          alert('Login failed.')
         });
     }
   };
