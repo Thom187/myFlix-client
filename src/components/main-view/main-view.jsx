@@ -80,27 +80,6 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  addToFavoriteMovies(e) {
-    const { movie } = this.props;
-    const user = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-
-    e.preventDefault();
-    axios.
-      post(`https://my-flix1987.herokuapp.com/users/${user}/favoriteMovies/${movie._id}`,
-        { user: localStorage.getItem('user') },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        alert('Added to your Favorites.');
-      })
-      .catch((error) => console.error(error));
-  }
-
-
   // onLoggedOut() {
   //   localStorage.removeItem('token');
   //   localStorage.removeItem('user');
