@@ -241,9 +241,9 @@ export class ProfileView extends React.Component {
         <>
           <Row className='mt-4'></Row>
           <Row>
-            <Col lg={3} md={6}>
-              <h4 className='mb-2'>Favorite Movies</h4>
-              {favoriteMovie.map((movie) => (
+            <h4 className='mb-2'>Favorite Movies</h4>
+            {favoriteMovie.map((movie) => (
+              <Col lg={3} md={6}>
                 <Card className='m-2'>
                   <Link to={`/movies/${movie._id}`}>
                     <Card.Img
@@ -255,7 +255,6 @@ export class ProfileView extends React.Component {
                     <Card.Title>
                       {movie.title}
                     </Card.Title>
-
                     <Button
                       variant='danger'
                       onClick={() => {
@@ -266,8 +265,8 @@ export class ProfileView extends React.Component {
                     </Button>
                   </Card.Body>
                 </Card>
-              ))}
-            </Col>
+              </Col>
+            ))}
           </Row>
         </>
       </Container >
