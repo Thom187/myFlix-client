@@ -14,7 +14,7 @@ export class ProfileView extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: null,
+      user: null,
       password: null,
       email: null,
       birthday: null,
@@ -36,7 +36,7 @@ export class ProfileView extends React.Component {
       })
       .then((response) => {
         this.setState({
-          user: response.data.username,
+          username: response.data.username,
           password: response.data.password,
           email: response.data.email,
           birthday: response.data.birthday,
@@ -56,25 +56,26 @@ export class ProfileView extends React.Component {
       .put(
         `https://my-flix1987.herokuapp.com/users/${user}`,
         {
-          user: this.state.username,
+          username: this.state.username,
           password: this.state.password,
           email: this.state.email,
           birthday: this.state.birthday,
         },
         { headers: { Authorization: `Bearer ${token}` } }
       )
-      .then((response) => {
-        console.log("response", response);
-        alert("Profile was successfully updated");
+      .then((res) => {
+        // const data = response.data;
+        console.log("response", res);
+        alert("Profile Update successful, please login again!");
         this.setState({
-          user: response.data.username,
-          password: response.data.password,
-          email: response.data.email,
-          birthday: response.data.birthday,
-        });
-        localStorage.setItem("user", data.username);
+          username: res.data.username,
+          password: res.data.password,
+          email: res.data.email,
+          birthday: res.data.birthday,
+        })
+        localStorage.clear();
 
-        window.location.pathname = "/";
+        window.open('/', '_self');
       })
       .catch(function (error) {
         console.log(error);
@@ -128,7 +129,7 @@ export class ProfileView extends React.Component {
 
   setUsername(value) {
     this.setState({
-      user: value,
+      username: value,
     });
   }
 
@@ -152,7 +153,7 @@ export class ProfileView extends React.Component {
 
   render() {
     const { movies } = this.props;
-    const { favoriteMovies, user, password, email, birthday } = this.state;
+    const { favoriteMovies, username, password, email, birthday } = this.state;
 
     const favoriteMovie = favoriteMovies.map((movieId) =>
       movies.find((movie) => movie._id === movieId)
@@ -165,7 +166,7 @@ export class ProfileView extends React.Component {
             <h4>Your Account</h4>
             <Card>
               <Card.Body>
-                <Card.Text>Username: {user}</Card.Text>
+                <Card.Text>Username: {username}</Card.Text>
                 <Card.Text>Email: {email}</Card.Text>
                 <Card.Text>
                   Birthday: {birthday}
