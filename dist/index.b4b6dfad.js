@@ -41903,7 +41903,6 @@ class ProfileView extends (0, _reactDefault.default).Component {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                    className: "d-flex text-align-center",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                         className: "mt-4 mb-2",
                         children: "Favorite Movies"

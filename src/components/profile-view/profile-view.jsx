@@ -176,7 +176,7 @@ export class ProfileView extends React.Component {
           </Col>
         </Row>
 
-        <Row className="d-flex text-align-center">
+        <Row>
           <h4 className='mt-4 mb-2'>Favorite Movies</h4>
         </Row>
         <Row>
