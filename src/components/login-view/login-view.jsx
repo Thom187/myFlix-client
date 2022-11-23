@@ -47,7 +47,7 @@ export function LoginView(props) {
 
   return (
     <Container>
-      <Row>
+      <Row className='mt-3'>
         <Col>
           <CardGroup>
             <Card>
@@ -79,14 +79,22 @@ export function LoginView(props) {
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
 
-                  <Button variant='primary' type='submit' onClick={handleSubmit}>Login</Button>
-                  <Button
-                    className='ml-2'
-                    variant='primary'
-                    href={"/register"}
-                  >
-                    Register
-                  </Button>
+                  <div className='mt-3 d-flex justify-content-between'>
+                    <Button
+                      variant='primary'
+                      type='submit'
+                      onClick={handleSubmit}
+                    >
+                      Login
+                    </Button>
+                    <Button
+                      className='ml-2'
+                      variant='primary'
+                      href={"/register"}
+                    >
+                      Register
+                    </Button>
+                  </div>
                 </Form>
               </Card.Body>
             </Card>
