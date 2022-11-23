@@ -4,13 +4,9 @@
 
 .card-body, .Card, .app-container {
   color: #ecdbba;
+  text-align: center;
   background-color: #2d2463;
   padding: 40px;
-}
-
-.movie-poster {
-  text-align: center;
-  padding-bottom: 10px;
 }
 
 .movie-view {

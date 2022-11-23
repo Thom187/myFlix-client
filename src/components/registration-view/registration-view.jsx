@@ -77,7 +77,7 @@ export function RegistrationView(props) {
               <Card.Body>
                 <Card.Title>Please register</Card.Title>
                 <Form>
-                  <Form.Group>
+                  <Form.Group className='mb-3'>
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
                       type='text'
@@ -89,7 +89,7 @@ export function RegistrationView(props) {
                     {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className='mb-3'>
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
                       type='password'
@@ -102,7 +102,7 @@ export function RegistrationView(props) {
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className='mb-3'>
                     <Form.Label>Email:</Form.Label>
                     <Form.Control
                       type='email'
@@ -133,7 +133,6 @@ export function RegistrationView(props) {
                       Sign In
                     </Button>
                     <Button
-                      className='ml-2'
                       variant='primary'
                       href={'/'}
                     >
