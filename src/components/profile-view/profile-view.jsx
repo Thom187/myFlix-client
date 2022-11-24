@@ -162,7 +162,6 @@ export class ProfileView extends React.Component {
 
     return (
       <Container>
-        <UserInfo username={username} email={email} birthday={birthday} />
         {/* <Card>
               <Card.Body>
                 <Card.Text>Username: {username}</Card.Text>
@@ -173,11 +172,13 @@ export class ProfileView extends React.Component {
               </Card.Body>
             </Card> */}
         <Row>
-          <h4 className='mt-4 mb-2'>Favorite Movies</h4>
+          <Col xs={12}>
+            <h4 className='mt-4 mb-2'>Favorite Movies</h4>
+          </Col>
         </Row>
         <Row>
           {favoriteMovie.map((movie) => (
-            <Col lg={3} md={4} sm={6}>
+            <Col lg={3} md={4} sm={6} xs={12}>
               <Card className='m-2'>
                 <Link to={`/movies/${movie._id}`}>
                   <Card.Img
@@ -204,7 +205,10 @@ export class ProfileView extends React.Component {
         </Row>
 
         <Row>
-          <Col className='mb-4 mt-4'>
+          <Col xs={12} md={5}>
+            <UserInfo username={username} email={email} birthday={birthday} />
+          </Col>
+          <Col xs={12} md={7} className='mb-4 mt-4'>
             <h4>Update your Profile</h4>
 
             <Card>
