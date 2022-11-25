@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './genre-view.scss';
 
 import { Button, Col, Container, Row, Col } from 'react-bootstrap';
 
@@ -10,16 +11,16 @@ export class GenreView extends React.Component {
     return (
       <Container>
 
-        <Row className='mt-3'>
+        <Row className='genre'>
           <Col className='label'>Genre:</Col>
           <Col className='value'>{genre.name}</Col>
         </Row>
-        <Row className='mt-3'>
+        <Row className='genre'>
           <Col className='label'>Description:</Col>
           <Col className='value'>{genre.description}</Col>
         </Row>
 
-        <Button className='mt-3' onClick={() => {
+        <Button className='genre' variant='outline-light' onClick={() => {
           onBackClick(null);
         }}>Back</Button>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './director-view.scss'
 
 import { Button, Col, Container, Row, Col } from 'react-bootstrap';
 
@@ -10,20 +11,20 @@ export class DirectorView extends React.Component {
     return (
       <Container>
 
-        <Row className='mt-3'>
+        <Row className='director'>
           <Col className='label'>Director:</Col>
           <Col className='value'>{director.name}</Col>
         </Row>
-        <Row className='mt-3'>
+        <Row className='director'>
           <Col className='label'>Bio:</Col>
           <Col className='value'>{director.bio}</Col>
         </Row>
-        <Row className='mt-3'>
+        <Row className='director'>
           <Col className='label'>Birthday:</Col>
           <Col className='value'>{director.birthday}</Col>
         </Row>
 
-        <Button className='mt-3' onClick={() => {
+        <Button className='director' variant='outline-light' onClick={() => {
           onBackClick(null);
         }}>Back</Button>
 

@@ -13,4 +13,20 @@
   line-height: 1.5;
 }
 
+.navbar {
+  background-color: #ecdbba;
+  border: outset;
+  border-radius: 5pt;
+}
+
+.director {
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.genre {
+  flex-direction: column;
+  margin-top: 3%;
+}
+
 /*# sourceMappingURL=index.ce1d6491.css.map */
