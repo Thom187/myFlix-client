@@ -41868,8 +41868,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                     children: favoriteMovie.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                             lg: 3,
                             md: 4,
-                            sm: 6,
-                            xs: 12,
+                            xs: 6,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                                 className: "m-2",
                                 children: [

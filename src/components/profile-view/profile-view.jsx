@@ -178,7 +178,7 @@ export class ProfileView extends React.Component {
         </Row>
         <Row>
           {favoriteMovie.map((movie) => (
-            <Col lg={3} md={4} sm={6} xs={12}>
+            <Col lg={3} md={4} xs={6}>
               <Card className='m-2'>
                 <Link to={`/movies/${movie._id}`}>
                   <Card.Img
