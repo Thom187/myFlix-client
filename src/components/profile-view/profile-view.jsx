@@ -1,5 +1,5 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 import {
   Form,
   Button,
@@ -7,8 +7,9 @@ import {
   Row,
   Col,
   Card,
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import UserInfo from './user-info';
 
 export class ProfileView extends React.Component {
   constructor() {
@@ -24,12 +25,12 @@ export class ProfileView extends React.Component {
 
   componentDidMount() {
     this.getUser();
-    console.log("this.props", this.props);
+    console.log('this.props', this.props);
   }
 
   getUser = () => {
-    const user = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     axios
       .get(`https://my-flix1987.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -50,8 +51,8 @@ export class ProfileView extends React.Component {
 
   handleUpdateUser = (e) => {
     e.preventDefault();
-    const user = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     axios
       .put(
         `https://my-flix1987.herokuapp.com/users/${user}`,
@@ -65,8 +66,8 @@ export class ProfileView extends React.Component {
       )
       .then((res) => {
         // const data = response.data;
-        console.log("response", res);
-        alert("Profile Update successful, please login again!");
+        console.log('response', res);
+        alert('Profile Update successful, please login again!');
         this.setState({
           username: res.data.username,
           password: res.data.password,
@@ -83,11 +84,11 @@ export class ProfileView extends React.Component {
   };
 
   handleDeleteUser = (e) => {
-    const confirmDelete = window.confirm("Do you really want to delete your account?");
+    const confirmDelete = window.confirm('Do you really want to delete your account?');
 
     if (confirmDelete) {
-      const user = localStorage.getItem("user");
-      const token = localStorage.getItem("token");
+      const user = localStorage.getItem('user');
+      const token = localStorage.getItem('token');
       axios
         .delete(
           `https://my-flix1987.herokuapp.com/users/${user}`,
@@ -96,10 +97,10 @@ export class ProfileView extends React.Component {
           }
         )
         .then(() => {
-          localStorage.removeItem("user");
-          localStorage.removeItem("token");
-          alert("Profile successfully deleted");
-          window.location.pathname = "/";
+          localStorage.removeItem('user');
+          localStorage.removeItem('token');
+          alert('Profile successfully deleted');
+          window.location.pathname = '/';
         })
         .catch((e) => {
           console.log(error);
@@ -108,8 +109,8 @@ export class ProfileView extends React.Component {
   };
   removeFavoriteMovie = (movie) => {
     // e.preventDefault();
-    const user = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     axios
       .delete(
         `https://my-flix1987.herokuapp.com/users/${user}/favoriteMovies/${movie._id}`,
@@ -119,7 +120,7 @@ export class ProfileView extends React.Component {
       )
       .then((response) => {
         console.log(response);
-        alert("Movie was removed");
+        alert('Movie was removed');
         this.componentDidMount();
       })
       .catch(function (error) {
@@ -164,7 +165,8 @@ export class ProfileView extends React.Component {
         <Row>
           <Col className='mb-4 mt-4'>
             <h4>Your Account</h4>
-            <Card>
+            <UserInfo username={username} email={email} birthday={birthday} />
+            {/* <Card>
               <Card.Body>
                 <Card.Text>Username: {username}</Card.Text>
                 <Card.Text>Email: {email}</Card.Text>
@@ -172,7 +174,7 @@ export class ProfileView extends React.Component {
                   Birthday: {birthday}
                 </Card.Text>
               </Card.Body>
-            </Card>
+            </Card> */}
           </Col>
         </Row>
 
