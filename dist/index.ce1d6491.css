@@ -2,24 +2,31 @@
   color: #4682b4;
 }
 
-.card-body, .Card, .app-container {
+.card-body, .p4, .app-container {
   color: #ecdbba;
+  text-align: center;
   background-color: #2d2463;
   padding: 40px;
 }
 
-.btn {
-  horizontal-align: center;
-  margin-top: 10px;
-}
-
-.movie-poster {
-  text-align: center;
-  padding-bottom: 10px;
-}
-
 .movie-view {
   line-height: 1.5;
+}
+
+.navbar {
+  background-color: #ecdbba;
+  border: outset;
+  border-radius: 5pt;
+}
+
+.director {
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.genre {
+  flex-direction: column;
+  margin-top: 3%;
 }
 
 /*# sourceMappingURL=index.ce1d6491.css.map */

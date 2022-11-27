@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import './navbar.scss';
 
 export function Menubar({ user }) {
 
@@ -21,7 +22,7 @@ export function Menubar({ user }) {
 
   return (
 
-    <Navbar className='main-nav' sticky='top' bg='light' expand='lg' variant='light' >
+    <Navbar className='main-nav' sticky='top' expand='lg' variant='light' >
       <Container>
         <Navbar.Brand className='navbar-logo' href='/' >
           myFlixMovie
@@ -54,6 +55,6 @@ export function Menubar({ user }) {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar >
   );
 }
