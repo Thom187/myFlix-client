@@ -70,46 +70,46 @@ export function RegistrationView(props) {
 
   return (
     <Container>
-      <Row>
+      <Row className='mt-3'>
         <Col>
           <CardGroup>
             <Card>
               <Card.Body>
                 <Card.Title>Please register</Card.Title>
                 <Form>
-                  <Form.Group>
+                  <Form.Group className='mb-3'>
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
-                      type="text"
+                      type='text'
                       value={username}
                       onChange={e => setUsername(e.target.value)}
                       required
-                      placeholder="Enter a username"
+                      placeholder='Enter a username'
                     />
                     {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className='mb-3'>
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
-                      type="password"
+                      type='password'
                       value={password}
                       onChange={e => setPassword(e.target.value)}
                       required
-                      minLength="6"
-                      placeholder="Your password must be at least 6 characters"
+                      minLength='6'
+                      placeholder='Your password must be at least 6 characters'
                     />
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className='mb-3'>
                     <Form.Label>Email:</Form.Label>
                     <Form.Control
-                      type="email"
+                      type='email'
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       required
-                      placeholder="Enter your email address "
+                      placeholder='Enter your email address '
                     />
                     {emailErr && <p>{emailErr}</p>}
                   </Form.Group>
@@ -117,21 +117,28 @@ export function RegistrationView(props) {
                   <Form.Group>
                     <Form.Label>Birthday:</Form.Label>
                     <Form.Control
-                      type="date"
+                      type='date'
                       value={birthday}
                       onChange={e => setBirthday(e.target.value)}
                       required
                     />
                   </Form.Group>
 
-                  <Button variant="primary" type="submit" onClick={handleSubmit}>Sign In</Button>
-                  <Button
-                    className='ml-2'
-                    variant='primary'
-                    href={"/"}
-                  >
-                    Login
-                  </Button>
+                  <div className='mt-3 d-flex justify-content-between'>
+                    <Button
+                      variant='primary'
+                      type='submit'
+                      onClick={handleSubmit}
+                    >
+                      Sign In
+                    </Button>
+                    <Button
+                      variant='primary'
+                      href={'/'}
+                    >
+                      Login
+                    </Button>
+                  </div>
                 </Form>
               </Card.Body>
             </Card>

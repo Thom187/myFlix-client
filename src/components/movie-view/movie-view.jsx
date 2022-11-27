@@ -31,33 +31,33 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
+      <div className='movie-view mt-3'>
+        <div className='movie-poster'>
           <img src={movie.imagePath} />
         </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.title}</span>
+        <div className='movie-title mt-3'>
+          <span className='label'>Title: </span>
+          <span className='value'>{movie.title}</span>
         </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.description}</span>
+        <div className='movie-description mt-2'>
+          <span className='label'>Description: </span>
+          <span className='value'>{movie.description}</span>
         </div>
-        <div className="movie-director">
-          <span className="label">Director: </span>
-          <span className="value">{movie.director.name}</span>
+        <div className='movie-director mt-2'>
+          <span className='label'>Director: </span>
+          <span className='value'>{movie.director.name}</span>
         </div>
-        <div className="movie-genre">
-          <span className="label">Genre: </span>
-          <span className="value">{movie.genre.name}</span>
+        <div className='movie-genre mt-2 mb-3'>
+          <span className='label'>Genre: </span>
+          <span className='value'>{movie.genre.name}</span>
         </div>
 
         <Link to={`/directors/${movie.director.name}`}>
-          <Button variant="link">Director</Button>
+          <Button className='mr-2' variant='primary'>Director</Button>
         </Link>
 
         <Link to={`/genres/${movie.genre.name}`}>
-          <Button variant="link">Genre</Button>
+          <Button className='mr-2' variant='primary'>Genre</Button>
         </Link>
 
         <Button

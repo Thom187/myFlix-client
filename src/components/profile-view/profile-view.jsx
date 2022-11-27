@@ -174,8 +174,41 @@ export class ProfileView extends React.Component {
               </Card.Body>
             </Card>
           </Col>
+        </Row>
 
-          <Col md={7} className='mb-4 mt-4'>
+        <Row className="d-flex text-align-center">
+          <h4 className='mt-4 mb-2'>Favorite Movies</h4>
+        </Row>
+        <Row>
+          {favoriteMovie.map((movie) => (
+            <Col lg={3} md={4} sm={6}>
+              <Card className='m-2'>
+                <Link to={`/movies/${movie._id}`}>
+                  <Card.Img
+                    src={movie.imagePath}
+                    alt={movie.title}
+                  ></Card.Img>
+                </Link>
+                <Card.Body>
+                  <Card.Title>
+                    {movie.title}
+                  </Card.Title>
+                  <Button
+                    variant='danger'
+                    onClick={() => {
+                      this.removeFavoriteMovie(movie);
+                    }}
+                  >
+                    Remove
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+        <Row>
+          <Col className='mb-4 mt-4'>
             <h4>Update your Profile</h4>
 
             <Card>
@@ -226,7 +259,7 @@ export class ProfileView extends React.Component {
                     onClick={this.handleUpdateUser}
                   >
                     Update Profile
-                  </Button>{" "}
+                  </Button>
                   <Button
                     variant='danger'
                     type='submit'
@@ -239,37 +272,6 @@ export class ProfileView extends React.Component {
             </Card>
           </Col>
         </Row>
-        <>
-          <Row className='mt-4'></Row>
-          <Row>
-            <h4 className='mb-2'>Favorite Movies</h4>
-            {favoriteMovie.map((movie) => (
-              <Col lg={3} md={6}>
-                <Card className='m-2'>
-                  <Link to={`/movies/${movie._id}`}>
-                    <Card.Img
-                      src={movie.imagePath}
-                      alt={movie.title}
-                    ></Card.Img>
-                  </Link>
-                  <Card.Body>
-                    <Card.Title>
-                      {movie.title}
-                    </Card.Title>
-                    <Button
-                      variant='danger'
-                      onClick={() => {
-                        this.removeFavoriteMovie(movie);
-                      }}
-                    >
-                      Remove
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </>
       </Container >
     );
   }
