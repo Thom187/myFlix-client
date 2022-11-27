@@ -162,11 +162,8 @@ export class ProfileView extends React.Component {
 
     return (
       <Container>
-        <Row>
-          <Col className='mb-4 mt-4'>
-            <h4>Your Account</h4>
-            <UserInfo username={username} email={email} birthday={birthday} />
-            {/* <Card>
+        <UserInfo username={username} email={email} birthday={birthday} />
+        {/* <Card>
               <Card.Body>
                 <Card.Text>Username: {username}</Card.Text>
                 <Card.Text>Email: {email}</Card.Text>
@@ -175,9 +172,6 @@ export class ProfileView extends React.Component {
                 </Card.Text>
               </Card.Body>
             </Card> */}
-          </Col>
-        </Row>
-
         <Row>
           <h4 className='mt-4 mb-2'>Favorite Movies</h4>
         </Row>
