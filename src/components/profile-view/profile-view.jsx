@@ -254,7 +254,7 @@ export class ProfileView extends React.Component {
                 </Form.Group>
                 <div className='d-flex justify-content-between'>
                   <Button
-                    variant='primary'
+                    variant='warning'
                     type='submit'
                     onClick={this.handleUpdateUser}
                   >

@@ -5851,7 +5851,7 @@ class MainView extends (0, _reactDefault.default).Component {
         }
     }
     getMovies(token) {
-        (0, _axiosDefault.default).get("https://my-flix1987.herokuapp.com/movies", {
+        (0, _axiosDefault.default).get("https://thom187-myflix-movies.netlify.app/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -40827,7 +40827,7 @@ function LoginView(props) {
                                                     value: username,
                                                     onChange: (e)=>setUsername(e.target.value),
                                                     required: true,
-                                                    placeholder: "Enter your username"
+                                                    placeholder: "Enter your Username"
                                                 }, void 0, false, {
                                                     fileName: "src/components/login-view/login-view.jsx",
                                                     lineNumber: 59,
@@ -41987,7 +41987,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                                 className: "d-flex justify-content-between",
                                                 children: [
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                                        variant: "primary",
+                                                        variant: "warning",
                                                         type: "submit",
                                                         onClick: this.handleUpdateUser,
                                                         children: "Update Profile"
