@@ -43638,10 +43638,13 @@ object-assign
         parcelHelpers.defineInteropFlag(exports);
         parcelHelpers.export(exports, "SET_MOVIES", () => SET_MOVIES);
         parcelHelpers.export(exports, "SET_FILTER", () => SET_FILTER);
+        parcelHelpers.export(exports, "SET_USER", () => SET_USER);
         parcelHelpers.export(exports, "setMovies", () => setMovies);
         parcelHelpers.export(exports, "setFilter", () => setFilter);
+        parcelHelpers.export(exports, "setUser", () => setUser);
         const SET_MOVIES = "SET_MOVIES";
         const SET_FILTER = "SET_FILTER";
+        const SET_USER = "SET_USER";
         function setMovies(value) {
             return {
                 type: SET_MOVIES,
@@ -43651,6 +43654,12 @@ object-assign
         function setFilter(value) {
             return {
                 type: SET_FILTER,
+                value
+            };
+        }
+        function setUser(value) {
+            return {
+                type: SET_USER,
                 value
             };
         }
@@ -44500,9 +44509,18 @@ object-assign
                     return state;
             }
         }
+        function user(state = "", action) {
+            switch (action.type) {
+                case 0, _actions.SET_USER:
+                    return action.value;
+                default:
+                    return state;
+            }
+        }
         const moviesApp = (0, _redux.combineReducers)({
             visibilityFilter,
-            movies
+            movies,
+            user
         });
         exports.default = moviesApp;
 
