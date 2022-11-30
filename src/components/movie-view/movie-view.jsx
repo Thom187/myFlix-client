@@ -21,7 +21,6 @@ export class MovieView extends React.Component {
         }
       )
       .then((response) => {
-        console.log(response);
         alert('Added to your Favorites.');
       })
       .catch((error) => console.error(error));

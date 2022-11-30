@@ -25,7 +25,6 @@ export class ProfileView extends React.Component {
 
   componentDidMount() {
     this.getUser();
-    console.log('this.props', this.props);
   }
 
   getUser = () => {
