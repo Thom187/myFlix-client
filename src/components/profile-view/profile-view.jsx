@@ -65,7 +65,6 @@ export class ProfileView extends React.Component {
       )
       .then((res) => {
         // const data = response.data;
-        console.log('response', res);
         alert('Profile Update successful, please login again!');
         this.setState({
           username: res.data.username,
@@ -118,7 +117,6 @@ export class ProfileView extends React.Component {
         }
       )
       .then((response) => {
-        console.log(response);
         alert('Movie was removed');
         this.componentDidMount();
       })
