@@ -41,7 +41,7 @@ class MainView extends React.Component {
   }
 
   getMovies(token) {
-    axios.get('https://thom187-myflix-movies.netlify.app/movies', {
+    axios.get('https://thom187-myflix-movies.netlify.app/.netlify/functions/server/movies', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {

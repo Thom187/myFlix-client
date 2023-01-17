@@ -3136,7 +3136,7 @@ ${frame.code}`;
                         groupEnd: props
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 disabledDepth++;
             }
             function reenableLogs() {
@@ -3171,7 +3171,7 @@ ${frame.code}`;
                         })
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 if (disabledDepth < 0) error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
             }
             var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
@@ -4994,7 +4994,7 @@ ${frame.code}`;
                         groupEnd: props
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 disabledDepth++;
             }
             function reenableLogs() {
@@ -5029,7 +5029,7 @@ ${frame.code}`;
                         })
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 if (disabledDepth < 0) error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
             }
             var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher;
@@ -8601,7 +8601,7 @@ object-assign
                         groupEnd: props
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 disabledDepth++;
             }
             function reenableLogs() {
@@ -8636,7 +8636,7 @@ object-assign
                         })
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 if (disabledDepth < 0) error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
             }
             var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
@@ -10667,7 +10667,7 @@ object-assign
                         groupEnd: props
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 disabledDepth++;
             }
             function reenableLogs() {
@@ -10702,7 +10702,7 @@ object-assign
                         })
                     });
                     /* eslint-enable react-internal/no-production-logging */
-}
+                }
                 if (disabledDepth < 0) error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
             }
             var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
@@ -16071,7 +16071,7 @@ object-assign
             /* eslint-disable no-unused-expressions */ anchorNode.nodeType;
                     focusNode.nodeType;
                     /* eslint-enable no-unused-expressions */
-} catch (e) {
+                } catch (e) {
                     return null;
                 }
                 return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
@@ -29724,7 +29724,7 @@ object-assign
                     nonExtensibleObject
                 ]);
                 /* eslint-enable no-new */
-} catch (e1) {
+            } catch (e1) {
                 // TODO: Consider warning about bad polyfills
                 hasBadMapPolyfill = true;
             }
@@ -31594,7 +31594,7 @@ object-assign
             }
         } catch (e) {
             /* */
-}
+        }
 /**
  * An `addEventListener` ponyfill, supports the `once` option
  * 
@@ -40870,7 +40870,7 @@ object-assign
                 const handleSubmit = (e) => {
                     e.preventDefault();
                     const isReq = validate();
-                    if (isReq) /* Send a request to the server for authentication */ (0, _axiosDefault.default).post("https://thom187-myflix-movies.netlify.app/login", {
+                    if (isReq) /* Send a request to the server for authentication */ (0, _axiosDefault.default).post("thom187-myflix-movies.netlify.app/.netlify/functions/server/login", {
                         username: username,
                         password: password
                     }).then((response) => {
@@ -43278,9 +43278,9 @@ object-assign
                 // it would pause the execution at this line.
                 throw new Error(message);
                 /* eslint-disable no-empty */
-} catch (e) { }
+            } catch (e) { }
             /* eslint-enable no-empty */
-}
+        }
         exports.default = warning;
 
     }, { "@parcel/transformer-js/src/esmodule-helpers.js": "gkKU3" }], "5QhPl": [function (require, module, exports) {
