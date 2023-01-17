@@ -89,7 +89,7 @@ export class ProfileView extends React.Component {
       const token = localStorage.getItem('token');
       axios
         .delete(
-          `https://my-flix1987.herokuapp.com/users/${user}`,
+          `https://myflix-movie-api.onrender.com/users/${user}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -111,7 +111,7 @@ export class ProfileView extends React.Component {
     const token = localStorage.getItem('token');
     axios
       .delete(
-        `https://my-flix1987.herokuapp.com/users/${user}/favoriteMovies/${movie._id}`,
+        `https://myflix-movie-api.onrender.com/users/${user}/favoriteMovies/${movie._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
