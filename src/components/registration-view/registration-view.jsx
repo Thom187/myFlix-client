@@ -49,7 +49,7 @@ export function RegistrationView(props) {
     const isReq = validate();
     if (isReq) {
       /* Send a request to the server for authentication */
-      axios.post('https://thom187-myflix-movies.netlify.app/users', {
+      axios.post('https://thom187-myflix-movies.netlify.app/.netlify/functions/server/users', {
         username: username,
         password: password,
         email: email,
