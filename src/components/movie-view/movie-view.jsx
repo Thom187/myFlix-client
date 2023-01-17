@@ -14,7 +14,7 @@ export class MovieView extends React.Component {
 
     e.preventDefault();
     axios.
-      post(`https://my-flix1987.herokuapp.com/users/${user}/favoriteMovies/${movie._id}`,
+      post(`https://thom187-myflix-movies.netlify.app/users/${user}/favoriteMovies/${movie._id}`,
         { user: localStorage.getItem('user') },
         {
           headers: { Authorization: `Bearer ${token}` },

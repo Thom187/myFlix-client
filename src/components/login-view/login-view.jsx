@@ -31,7 +31,7 @@ export function LoginView(props) {
     const isReq = validate();
     if (isReq) {
       /* Send a request to the server for authentication */
-      axios.post('https://my-flix1987.herokuapp.com/login', {
+      axios.post('https://thom187-myflix-movies.netlify.app/login', {
         username: username,
         password: password
       })
