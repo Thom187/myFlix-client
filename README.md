@@ -14,8 +14,8 @@ The client-side component of a movie application, based on the REST API - myFlix
 
 ## Links
 
-[Live Demo](https://thom187-myflix-movies.netlify.app/)
-[REST API - GitHub repository](https://github.com/Thom187/movie_api)
+- [Live Demo](https://thom187-myflix-movies.netlify.app/)
+- [REST API - GitHub repository](https://github.com/Thom187/movie_api)
 
 ## Features
 
