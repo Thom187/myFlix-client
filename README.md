@@ -1,4 +1,4 @@
-# mxFlix-client
+# myFlix-client
 
 ## Objective
 
