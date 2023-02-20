@@ -2,6 +2,11 @@
   color: #4682b4;
 }
 
+body {
+  height: 100vh;
+  background-color: #2d2463;
+}
+
 .card-body, .p4, .app-container {
   color: #ecdbba;
   text-align: center;

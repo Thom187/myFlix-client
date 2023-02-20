@@ -1,6 +1,11 @@
 $color-bg: #2D2463;
 $color-font: #ECDBBA;
 
+body {
+  height: 100vh;
+  background-color: $color-bg;
+}
+
 .card-body,
 .p4,
 .app-container {
