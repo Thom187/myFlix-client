@@ -1,0 +1,32 @@
+.card-body, .p4, .app-container {
+  color: #ecdbba;
+  text-align: center;
+  background-color: #2d2463;
+  padding: 40px;
+}
+
+.movie-view {
+  line-height: 1.5;
+}
+
+.navbar {
+  background-color: #ecdbba;
+  border: outset;
+  border-radius: 5pt;
+}
+
+.director {
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.genre {
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */
